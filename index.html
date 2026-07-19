@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Financial Blueprint — Partner With Us</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: "#0B1F3A",
+          paper: "#F5F1E8",
+          gold: "#C9A227",
+          teal: "#2E6E62",
+          rust: "#B4483C",
+        },
+        fontFamily: {
+          serif: ["Fraunces", "serif"],
+          sans: ["Inter", "sans-serif"],
+          mono: ["IBM Plex Mono", "monospace"],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  body { background: #0B1F3A; }
+  .road-line {
+    stroke-dasharray: 10 8;
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script>
+const {
+  useState
+} = React;
+const PLACEHOLDER = "text-rust"; // visual flag for numbers Andrew needs to verify/replace
+
+const weeks = [{
+  n: 1,
+  title: "Where You Actually Stand",
+  body: "Participants build a real, judgment-free picture of income, debt, and spending — most for the first time in their lives. No jargon, no shame, just the numbers on the table."
+}, {
+  n: 2,
+  title: "Banking & Credit, Demystified",
+  body: "How accounts, credit scores, and interest actually work — and how to use them instead of being used by them."
+}, {
+  n: 3,
+  title: "Budgeting That Survives Real Life",
+  body: "A budget built around irregular income and real emergencies, not a spreadsheet template that falls apart in month two."
+}, {
+  n: 4,
+  title: "Debt & Emergency Planning",
+  body: "A concrete plan to work down existing debt and build the first real cushion against the next unexpected expense."
+}, {
+  n: 5,
+  title: "Saving & Building Toward Something",
+  body: "Short and long-term saving goals, and the first conversation about credit-building and future borrowing on their own terms."
+}, {
+  n: 6,
+  title: "The Roadmap Forward",
+  body: "Each participant leaves with a written plan, a support community, and a direct line to ongoing coaching."
+}];
+const tiers = [{
+  name: "Community Partner",
+  amount: "$2,500",
+  gives: ["Sponsors one full Roadmap cohort", "Logo on all cohort materials", "Recognition at graduation"]
+}, {
+  name: "CRA Partner",
+  amount: "$10,000",
+  gives: ["Sponsors a full year of Roadmap cohorts at one venue", "Community Reinvestment Act–eligible partnership", "Co-branded reporting for compliance documentation", "Speaking opportunity at graduation events"]
+}, {
+  name: "Founding Partner",
+  amount: "$25,000+",
+  gives: ["Multi-venue, multi-year commitment", "Named sponsorship of the Roadmap Relief Fund", "Seat at the annual impact review", "First right to co-develop future programs"]
+}];
+function Waypoint({
+  w,
+  open,
+  onToggle
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "relative pl-16"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "absolute left-0 top-0 w-11 h-11 rounded-full bg-gold text-ink font-mono font-semibold flex items-center justify-center text-sm"
+  }, String(w.n).padStart(2, "0")), /*#__PURE__*/React.createElement("button", {
+    onClick: onToggle,
+    className: "text-left w-full"
+  }, /*#__PURE__*/React.createElement("h4", {
+    className: "font-serif text-xl md:text-2xl text-paper font-semibold flex items-center gap-3"
+  }, w.title, /*#__PURE__*/React.createElement("span", {
+    className: "text-gold text-sm font-mono"
+  }, open ? "−" : "+"))), open && /*#__PURE__*/React.createElement("p", {
+    className: "text-paper/70 mt-2 max-w-xl leading-relaxed"
+  }, w.body));
+}
+function App() {
+  const [openWeek, setOpenWeek] = useState(1);
+  return /*#__PURE__*/React.createElement("div", {
+    className: "bg-ink text-paper font-sans"
+  }, /*#__PURE__*/React.createElement("nav", {
+    className: "max-w-6xl mx-auto px-6 py-6 flex items-center justify-between"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "font-serif text-lg font-semibold tracking-tight"
+  }, "The Financial Blueprint"), /*#__PURE__*/React.createElement("a", {
+    href: "#partner",
+    className: "text-sm border border-gold/40 rounded-full px-4 py-2 hover:bg-gold hover:text-ink transition"
+  }, "Partner with us")), /*#__PURE__*/React.createElement("header", {
+    className: "max-w-6xl mx-auto px-6 pt-10 pb-20"
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "font-mono text-gold text-xs tracking-[0.2em] uppercase mb-4"
+  }, "Fort Worth, TX — Financial Literacy Program"), /*#__PURE__*/React.createElement("h1", {
+    className: "font-serif text-4xl md:text-6xl font-semibold leading-[1.05] max-w-3xl"
+  }, "Six weeks. One roadmap.", /*#__PURE__*/React.createElement("br", null), "A lifetime of financial confidence."), /*#__PURE__*/React.createElement("p", {
+    className: "text-paper/70 text-lg mt-6 max-w-xl leading-relaxed"
+  }, "The Roadmap is a six-week financial literacy program built for families who were never taught this — taught by someone who lived it, not read it in a textbook. We're looking for partners who want their name on that outcome."), /*#__PURE__*/React.createElement("div", {
+    className: "flex flex-wrap gap-4 mt-8"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#roadmap",
+    className: "px-6 py-3 rounded-full bg-gold text-ink font-medium text-sm"
+  }, "See the Roadmap"), /*#__PURE__*/React.createElement("a", {
+    href: "#partner",
+    className: "px-6 py-3 rounded-full border border-paper/30 text-sm"
+  }, "View partnership tiers"))), /*#__PURE__*/React.createElement("section", {
+    className: "border-y border-paper/10 bg-ink"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-8"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+    className: `font-serif text-4xl font-semibold ${PLACEHOLDER}`
+  }, "[X]%"), /*#__PURE__*/React.createElement("p", {
+    className: "text-paper/60 text-sm mt-2 leading-relaxed"
+  }, "of local families report never having received any formal financial education. ", /*#__PURE__*/React.createElement("span", {
+    className: "italic"
+  }, "— replace with a sourced local stat before sending to partners."))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+    className: `font-serif text-4xl font-semibold ${PLACEHOLDER}`
+  }, "[X]"), /*#__PURE__*/React.createElement("p", {
+    className: "text-paper/60 text-sm mt-2 leading-relaxed"
+  }, "families reached in Fort Worth since launch.", /*#__PURE__*/React.createElement("span", {
+    className: "italic"
+  }, " — replace with your real cohort count."))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+    className: "font-serif text-4xl font-semibold text-gold"
+  }, "2"), /*#__PURE__*/React.createElement("p", {
+    className: "text-paper/60 text-sm mt-2 leading-relaxed"
+  }, "community venues currently hosting cohorts — Betsy Price and Joyce Spindor community centers.")))), /*#__PURE__*/React.createElement("section", {
+    id: "roadmap",
+    className: "max-w-6xl mx-auto px-6 py-20"
+  }, /*#__PURE__*/React.createElement("h2", {
+    className: "font-serif text-3xl md:text-4xl font-semibold mb-2"
+  }, "The Roadmap"), /*#__PURE__*/React.createElement("p", {
+    className: "text-paper/60 mb-12 max-w-xl"
+  }, "Six weeks. Six waypoints. A real, practical plan by the end — not a binder that gets shelved."), /*#__PURE__*/React.createElement("div", {
+    className: "relative"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "absolute left-[22px] top-2 bottom-2 w-px bg-paper/15"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "space-y-10"
+  }, weeks.map(w => /*#__PURE__*/React.createElement(Waypoint, {
+    key: w.n,
+    w: w,
+    open: openWeek === w.n,
+    onToggle: () => setOpenWeek(openWeek === w.n ? null : w.n)
+  }))))), /*#__PURE__*/React.createElement("section", {
+    className: "bg-paper text-ink"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-start"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", {
+    className: "font-serif text-3xl font-semibold mb-4"
+  }, "Built to be fundable"), /*#__PURE__*/React.createElement("p", {
+    className: "text-ink/70 leading-relaxed"
+  }, "The Financial Blueprint operates as a paired LLC and 501(c)(3) structure. Program delivery and coaching run through the LLC; community programming, the Roadmap Relief Fund, and sponsor partnerships run through the nonprofit — which means your contribution can qualify as a Community Reinvestment Act investment, not just a marketing line item.")), /*#__PURE__*/React.createElement("div", {
+    className: "bg-ink text-paper rounded-2xl p-6 font-mono text-sm space-y-3"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex justify-between border-b border-paper/10 pb-2"
+  }, /*#__PURE__*/React.createElement("span", null, "The Roadmap (per cohort)"), /*#__PURE__*/React.createElement("span", {
+    className: "text-gold"
+  }, "$400")), /*#__PURE__*/React.createElement("div", {
+    className: "flex justify-between border-b border-paper/10 pb-2"
+  }, /*#__PURE__*/React.createElement("span", null, "Blueprint Community"), /*#__PURE__*/React.createElement("span", {
+    className: "text-gold"
+  }, "$50/mo")), /*#__PURE__*/React.createElement("div", {
+    className: "flex justify-between border-b border-paper/10 pb-2"
+  }, /*#__PURE__*/React.createElement("span", null, "Blueprint Coaching"), /*#__PURE__*/React.createElement("span", {
+    className: "text-gold"
+  }, "$300/mo")), /*#__PURE__*/React.createElement("div", {
+    className: "flex justify-between"
+  }, /*#__PURE__*/React.createElement("span", null, "Roadmap Relief Fund"), /*#__PURE__*/React.createElement("span", {
+    className: "text-gold"
+  }, "sponsor-funded"))))), /*#__PURE__*/React.createElement("section", {
+    className: "max-w-6xl mx-auto px-6 py-20"
+  }, /*#__PURE__*/React.createElement("h2", {
+    className: "font-serif text-3xl font-semibold mb-4 max-w-xl"
+  }, "Why this, why now"), /*#__PURE__*/React.createElement("p", {
+    className: "text-paper/70 max-w-2xl leading-relaxed"
+  }, "I ran my household's finances starting at sixteen — not as an exercise, but because someone had to. Everything in the Roadmap exists because I needed it and didn't have it. That's the differentiator: this isn't a licensed curriculum bought off a shelf, it's built from what it actually takes to get a family from behind to stable.")), /*#__PURE__*/React.createElement("section", {
+    id: "partner",
+    className: "bg-paper text-ink"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "max-w-6xl mx-auto px-6 py-20"
+  }, /*#__PURE__*/React.createElement("h2", {
+    className: "font-serif text-3xl font-semibold mb-2"
+  }, "Partnership tiers"), /*#__PURE__*/React.createElement("p", {
+    className: `${PLACEHOLDER} text-sm mb-10 italic`
+  }, "Placeholder amounts — set these to whatever actually pencils out for your cohort costs and goals before sending this out."), /*#__PURE__*/React.createElement("div", {
+    className: "grid md:grid-cols-3 gap-6"
+  }, tiers.map(t => /*#__PURE__*/React.createElement("div", {
+    key: t.name,
+    className: "border border-ink/10 rounded-2xl p-6 flex flex-col"
+  }, /*#__PURE__*/React.createElement("h3", {
+    className: "font-serif text-xl font-semibold"
+  }, t.name), /*#__PURE__*/React.createElement("p", {
+    className: "font-mono text-2xl text-teal mt-2 mb-4"
+  }, t.amount), /*#__PURE__*/React.createElement("ul", {
+    className: "space-y-2 text-sm text-ink/70 flex-1"
+  }, t.gives.map((g, i) => /*#__PURE__*/React.createElement("li", {
+    key: i,
+    className: "flex gap-2"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-gold"
+  }, "—"), /*#__PURE__*/React.createElement("span", null, g))))))))), /*#__PURE__*/React.createElement("footer", {
+    className: "max-w-6xl mx-auto px-6 py-20"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "border border-paper/15 rounded-2xl p-10 text-center"
+  }, /*#__PURE__*/React.createElement("h2", {
+    className: "font-serif text-2xl md:text-3xl font-semibold mb-3"
+  }, "Let's put a Roadmap in front of more families."), /*#__PURE__*/React.createElement("p", {
+    className: "text-paper/60 mb-6 max-w-lg mx-auto"
+  }, "Reach out to talk through a partnership that fits your community reinvestment goals."), /*#__PURE__*/React.createElement("a", {
+    href: `mailto:${"partner@financialblueprint.example"}`,
+    className: "inline-block px-6 py-3 rounded-full bg-gold text-ink font-medium text-sm"
+  }, "partner@financialblueprint.example"), /*#__PURE__*/React.createElement("p", {
+    className: "text-paper/30 text-xs mt-4 font-mono"
+  }, "↑ placeholder email — replace with your real contact")), /*#__PURE__*/React.createElement("p", {
+    className: "text-paper/30 text-xs text-center mt-10 font-mono"
+  }, "© ", new Date().getFullYear(), " The Financial Blueprint")));
+}
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(/*#__PURE__*/React.createElement(App, null));
+</script>
+</body>
+</html>
